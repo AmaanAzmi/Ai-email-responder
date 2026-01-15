@@ -33,14 +33,25 @@ EMAIL:
     return response.text
 
 if __name__ == "__main__":
-    sample_email = """
-    Hi, I want to know more about your pricing and features.
-    Please send me the details.
-    """
-    reply = generate_reply(sample_email)
-    print("EMAIL:")
-    print(sample_email.strip())
-    print("\nGENERATED REPLY:")
-    print(reply)
+    print("=== AI Email Responder ===")
+    print("Paste your email below. End input with a blank line.")
+    print("---------------------------")
+
+    lines = []
+    while True:
+        line = input()
+        if line.strip() == "":
+            break
+        lines.append(line)
+
+    email_text = "\n".join(lines).strip()
+
+    if not email_text:
+        print("No email text provided. Exiting.")
+    else:
+        print("\nGenerating reply...\n")
+        reply = generate_reply(email_text)
+        print("=== GENERATED REPLY ===")
+        print(reply)
 
 
