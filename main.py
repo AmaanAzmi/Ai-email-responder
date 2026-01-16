@@ -19,7 +19,12 @@ def generate_reply(email_text: str, tone: str = "formal") -> str: #i know the de
     prompt = f"""
 You are a polite, professional email assistant.
 
-Write the reply in a {tone} tone.
+Write the reply in a {tone} to the email below. Follow these rules:
+- Start with a short greeting according to sri lankan tradition.
+- Answer the user's questions clearly.
+- If something is unclear, ask 1-2 clarifying questions.
+- End with a friendly sign-off.
+- Keep the reply under 8 sentences
 
 Read the email below and write a clear, concise reply in a professional tone.
 
